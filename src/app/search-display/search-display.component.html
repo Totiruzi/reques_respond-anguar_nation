@@ -7,8 +7,12 @@
   </thead>
   <tbody>
     <tr *ngFor="let result of searchResults
-    ">
-      <td>{{result.title}}</td>
+    "><a
+      target="_blank"
+      [href]="'https://en.wikipedia.org?curid=' + result.pageid"
+    >
+      {{result.title}}
+    </a>
       <td [innerHTML]= "result['snippet']"></td>
     </tr>
   </tbody>
