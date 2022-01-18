@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WikiServiceService } from './wiki-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularResponseRequest';
+  constructor(private wikiService: WikiServiceService) { }
+  searchResults = [];
+  recievedSearch(word: any) {
+    this.wikiService.search(word).subscribe(
+      (data: any) => {
+        this.searchResults = data.query.search;
+      }
+    )
+  }
+    
 }
+

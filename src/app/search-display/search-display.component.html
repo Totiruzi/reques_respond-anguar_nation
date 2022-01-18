@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <tr>
+      <th>TITLE</th>
+      <th>SNIPPET</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let result of searchResults
+    ">
+      <td>{{result.title}}</td>
+      <td>{{result.snippet}}</td>
+    </tr>
+  </tbody>
+</table>
